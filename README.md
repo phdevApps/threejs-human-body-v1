@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# Three.js Human Body Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a 3D human body visualization using Three.js. It aims to provide an interactive and educational experience for users to explore the human anatomy.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Future Enhancements](#future-enhancements)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+To get started with the project, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/yourusername/threejs-human-body.git
+  ```
+2. Navigate to the project directory:
+  ```bash
+  cd threejs-human-body
+  ```
+3. Install the dependencies:
+  ```bash
+  npm install 
+  ```  
+  or
+  ```bash
+  npm install --legacy-peer-deps
+  ```
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To run the project locally, use the following command:
+```bash
+vite --host
 ```
+This will start a local development server and open the project in your default web browser.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Features
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **3D Visualization**: Explore a detailed 3D model of the human body.
+- **Interactive Controls**: zoom, and pan the model to view different parts of the anatomy.
+- **Educational Labels**: Click on different parts of the body to learn more about them.
+- **Responsive Design**: Works on both desktop and mobile devices.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+## Technologies Used
+
+- **Three.js**: A JavaScript library for creating 3D graphics.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- **SCSS**: A CSS preprocessor that adds power and elegance to the basic language, allowing for variables, nested rules, and more.
+- **Vite**: A fast and modern build tool that leverages native ES modules for development and provides a lightning-fast HMR (Hot Module Replacement) experience.
+
+## Future Enhancements
+
+- **Additional Models**: Add more detailed models of specific organs and systems.
+- **VR Support**: Integrate virtual reality support for an immersive experience.
+- **Multilingual Support**: Provide educational labels in multiple languages.
+- **User Annotations**: Allow users to add their own annotations and notes to the model.
+
