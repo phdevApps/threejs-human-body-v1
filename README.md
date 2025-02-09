@@ -12,6 +12,13 @@ This project is a 3D human body visualization using Three.js. It aims to provide
 - [Technologies Used](#technologies-used)
 - [Future Enhancements](#future-enhancements)
 
+
+## Live Preview
+
+  ```bash
+    https://phdevapps.github.io/threejs-human-body-v1
+  ```
+
 ## Installation
 
 To get started with the project, follow these steps:
