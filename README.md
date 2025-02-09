@@ -15,7 +15,7 @@ This project is a 3D human body visualization using Three.js. It aims to provide
 
 ## Live Preview
 
-<a href="https://phdevapps.github.io/threejs-human-body-v1-demo" target="_blank" >Click Me to see live Preview</a>
+<a href="https://phdevapps.github.io/threejs-human-body-v1-demo"  target="_blank" rel="noopener noreferrer">Click Me to see live Preview</a>
 
 
   or copy link
