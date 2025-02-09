@@ -1,0 +1,447 @@
+.hidden {
+    display: none !important;
+}
+
+@mixin icon($margin: .4rem) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: .8rem;
+    aspect-ratio: 1;
+    margin-right: $margin;
+}
+
+//Styles
+
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    .header {
+
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+
+
+        .logo_box {
+            // background-color: green;
+            background-image: url(./assets/Icons/Logo.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 6rem;
+            aspect-ratio: 3/1;
+        }
+
+        .navbar {
+            border: 1px solid #fff;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: fit-content;
+            background-color: #DDE0E7;
+            border-radius: 0.58rem;
+            padding: .1rem;
+
+            &>* {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                cursor: pointer;
+                background-color: #DDE0E7;
+                color: #5F6877;
+                width: fit-content;
+                height: 2rem;
+
+                padding: .4rem .8rem;
+                border-radius: 8px;
+                font-size: 0.8rem;
+            }
+
+            [class*="__icon"] {
+                // background-color: green;
+                @include icon();
+
+                // background-position: center;
+                // background-repeat: no-repeat;
+                // background-size: contain;
+                // width: .8rem;
+                // aspect-ratio: 1;
+                // margin-right: .4rem;
+            }
+
+            #dashboard [class*="__icon"] {
+                background-image: url(./assets/Icons/dashboard.svg);
+            }
+
+            #Goals [class*="__icon"] {
+                background-image: url(./assets/Icons/Goals.svg);
+            }
+
+            #Report [class*="__icon"] {
+                background-image: url(./assets/Icons/Report.svg);
+            }
+
+            #Supplements [class*="__icon"] {
+                background-image: url(./assets/Icons/Supplements.svg);
+            }
+
+            #Tests [class*="__icon"] {
+                background-image: url(./assets/Icons/Tests.svg);
+            }
+
+            .active {
+                background-color: #fff;
+
+                [class*="__icon"] {
+                    filter: hue-rotate(0deg) brightness(120%) saturate(30);
+                }
+            }
+        }
+
+
+        .account_info {
+            // background-color: rgb(155, 214, 53);
+            // //border: 1px solid black;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &>* {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                background-color: #DDE0E7;
+                color: #5F6877;
+                width: fit-content;
+                height: fit-content;
+                margin: .4rem;
+                // padding: .6rem; //.8rem;
+                border-radius: 8px;
+                font-size: 0.8rem;
+                width: 2.1rem;
+                aspect-ratio: 1;
+                border: 1px solid #fff;
+
+                [class*="__icon"] {
+                    @include icon(0);
+                }
+            }
+
+            #user [class*="__icon"] {
+                background-image: url(./assets/Icons/user.svg);
+            }
+
+            #notifications [class*="__icon"] {
+                background-image: url(./assets/Icons/bill.svg);
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            .logo_box {}
+
+            .navbar {
+
+                display: none;
+
+                z-index: 10000;
+                background-color: #ffffff79;
+                filter: drop-shadow(10px 60px 80px #314147c0);
+
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                flex-direction: column;
+                padding: 0 4rem;
+
+                &>* {
+                    margin-bottom: .4rem;
+                    width: 100%;
+
+                }
+
+                &__cross {
+                    @include icon();
+                    cursor: pointer;
+                    right: 5%;
+                    top: 5%;
+                    width: 2rem;
+                    aspect-ratio: 1;
+                    position: absolute;
+                    background-image: url(./assets/Icons/cross.svg);
+                    display: flex !important;
+                }
+
+
+            }
+
+
+            .account_info {
+
+
+                &>* {
+
+
+                    [class*="__icon"] {}
+                }
+
+                #user [class*="__icon"] {}
+
+                #notifications [class*="__icon"] {}
+
+                #menu {
+                    display: flex !important;
+
+                    [class*="__icon"] {
+                        background-image: url(./assets/Icons/menu.svg);
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+    .actions_layer,
+    .display__layer {
+        background-color: lightblue;
+        width: 100%;
+        height: 100%;
+    }
+
+    .wellness_report {
+  
+        width: 2rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 16%;
+        left: 1.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #DDE0E7;
+            color: #5F6877;
+            width: fit-content;
+            height: fit-content;
+            margin: .4rem;
+            // padding: .6rem; //.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            width: 2.1rem;
+            aspect-ratio: 1;
+            border: 1px solid #fff;
+
+        }
+
+        #upper [class*="__icon"] {
+            background-image: url(./assets/Icons/heart.svg);
+        }
+
+        #lower [class*="__icon"] {
+            background-image: url(./assets/Icons/urology.svg);
+        }
+
+        .active {
+            background-color: #0874FB;
+
+            [class*="__icon"] {
+                filter: brightness(3);
+            }
+        }
+    }
+
+    .wellness_report__card {
+        background-color: #F6F7F9;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        position: absolute;
+        bottom: 10%;
+        left: 1.6rem;
+        border-radius: 6px;
+
+        padding: 1rem;
+        color: #5F6877;
+        font-size: 0.8rem;
+
+        &>*:not(:last-child) {
+            margin-bottom: .4rem;
+        }
+
+        &__progressbar {
+            // background-color: red;
+            // border: 1px solid black;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            // border: 1px solid black;
+            border-radius: 8px;
+            position: relative;
+
+            &__bar {
+                background: linear-gradient(90deg, #8597BE 0%, #0973FB 100%);
+                border-radius: 2rem;
+                // border: 2px solid  blue ;
+                width: 70%;
+                height: 1.6rem;
+                padding: 4px;
+                background-clip: content-box;
+
+                position: relative;
+
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: inherit;
+                    // width: 130%;
+                    padding: 2px;
+                    /* Thickness of the gradient border */
+                    background: linear-gradient(90deg, #8597BE 0%, #0973FB 100%);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: exclude;
+
+                }
+            }
+
+            &__percentage {
+                border-radius: 2rem;
+                padding: 8px 12px;
+                // background: linear-gradient(90deg, #5d6165 0%, #161ccf 100%);
+                border: 1px solid #fff;
+                // border-left-color: transparent;
+                background-color: #F6F7F9;
+                // border: 1px solid black;
+                height: 1.8rem;
+
+            }
+        }
+
+        &__issues_count {
+            // display: none;
+            // background-color: blue;
+            color: #070d19;
+            font-size: 2rem;
+
+        }
+
+        &__order_test {
+            color: #5F6877;
+            background-color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 10rem;
+        }
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 10%;
+        right: 1.6rem;
+        // background-color: yellow;
+        //border: 1px solid black;
+
+
+        width: 2rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &>* {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #DDE0E7;
+            color: #5F6877;
+            width: fit-content;
+            height: fit-content;
+            margin: .4rem;
+            // padding: .6rem; //.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            width: 2.1rem;
+            aspect-ratio: 1;
+            border: 1px solid #fff;
+        }
+
+        #zoom_in [class*="__icon"] {
+            background-image: url(./assets/Icons/plus.svg);
+        }
+
+        #zoom_out [class*="__icon"] {
+            background-image: url(./assets/Icons/minus.svg);
+        }
+
+        #full_screen [class*="__icon"] {
+            background-image: url(./assets/Icons/full_screen.svg);
+        }
+
+        .active {
+            background-color: #0874FB;
+
+            [class*="__icon"] {
+                filter: brightness(3);
+            }
+        }
+    }
+
+    .display__layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+
+        .display__canvas {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+    }
+}
+
+
+
+[class*="__icon"] {
+    @include icon(0);
+}
